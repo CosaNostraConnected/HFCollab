@@ -1,1 +1,3 @@
-Zombie API
+Project "Zombie AI":
+Status: UnFinished
+Purpose: Fun
