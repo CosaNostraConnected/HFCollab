@@ -1,4 +1,4 @@
-package net.hackforums.Vanilla;
+package com.simon987;
 
 /**
  * Created by Simon on 2014-08-15.
