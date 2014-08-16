@@ -1,9 +1,11 @@
 package net.hackforums.vanilla.zombie;
 
-/**
- * Created by Simon on 2014-08-15.
- */
 public class Entity {
+    /**
+     * Entity class constructor
+     * @param type The type of Entity
+     * @param loc The Location of the Entity
+     */
     public Entity(Entities type,Location loc) {
         this.type = type;
         this.location = loc;
@@ -13,19 +15,31 @@ public class Entity {
 
     private Location location;
 
+    /**
+     * @return The type of the Entity
+     */
     public Entities getType() {
         return type;
     }
 
+    /**
+     * @param type The type of the Entity
+     */
     public void setType(Entities type) {
         this.type = type;
     }
 
+    /**
+     * @return The Location of the Entity
+     */
     public Location getLocation() {
         return location;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    /**
+     * @param loc Location of the Entity
+     */
+    public void setLocation(Location loc) {
+        this.location = loc;
     }
 }

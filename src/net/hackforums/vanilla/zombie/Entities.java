@@ -1,11 +1,12 @@
 package net.hackforums.vanilla.zombie;
 
-/**
- * Created by Simon on 2014-08-15.
- */
 public enum Entities {
     HUMAN,ZOMBIE,BLANK;
 
+    /**
+     * The function toString overrides  the method in java.lang.Enum
+     * @return The "icon" that will be displayed in Grid.display()
+     */
     @Override
     public String toString() {
         if(super.toString() == "HUMAN"){
