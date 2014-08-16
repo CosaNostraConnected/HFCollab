@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: sqlite-jdbc.jar jna-4.1.0.jar jna-platform-4.1.0.jar
+Main-Class: com.simon987.Main
+
