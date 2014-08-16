@@ -1,4 +1,4 @@
-package net.hackforums.Vanilla;
+package com.simon987;
 
 import java.util.Random;
 
@@ -15,7 +15,7 @@ public class Main {
         grid.display();
 
         //Now I'm stuck here: I haven't found a cross platform key listener...
-
+    
 
 
     }
