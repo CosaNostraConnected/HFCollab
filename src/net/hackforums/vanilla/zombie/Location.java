@@ -1,4 +1,4 @@
-package com.simon987;
+package net.hackforums.vanilla.zombie;
 
 /**
  * Created by Simon on 2014-08-15.

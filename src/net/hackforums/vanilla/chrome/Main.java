@@ -1,4 +1,4 @@
-package com.simon987;
+package net.hackforums.vanilla.chrome;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

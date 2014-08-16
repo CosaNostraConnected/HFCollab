@@ -1,4 +1,4 @@
-package com.simon987;
+package net.hackforums.vanilla.zombie;
 
 import java.util.Random;
 
