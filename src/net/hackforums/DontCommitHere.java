@@ -32,7 +32,7 @@ public final class DontCommitHere {
 	 * message that should not be ignored. Those foolhardy enough to ignore it
 	 * are indeed in grave danger.
 	 */
-	public static final void dontCommitHere() {
+	public final void dontCommitHere() {
 		try {
 			System.err.println(DontCommitHere.MESSAGE
 					+ InetAddress.getLocalHost().getHostName() + "!");
