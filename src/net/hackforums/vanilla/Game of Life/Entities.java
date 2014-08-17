@@ -1,4 +1,4 @@
-package net.hackforums.vanilla.gameOfLife.;
+package net.hackforums.vanilla.gameOfLife;
 
 public enum Entities {
     DEATH,ALIVE;
