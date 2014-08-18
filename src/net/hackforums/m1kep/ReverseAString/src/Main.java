@@ -9,8 +9,7 @@ public class Main {
 		String reversedString = "";
 
 		System.out.println("Welcome to M1kep's String Reverser!");
-		System.out
-				.println("Enter the string you would like to reverse and then press enter: ");
+		System.out.println("Enter the string you would like to reverse and then press enter: ");
 		// Set string 'plainString' equal to user input.
 		String plainString = input.nextLine();
 		// Convert string into an array of characters.
