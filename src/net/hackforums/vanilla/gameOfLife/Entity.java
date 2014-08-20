@@ -1,40 +1,42 @@
 package net.hackforums.vanilla.gameOfLife;
 
 public class Entity {
+
     /**
      * Entity class constructor
-     * @param type The type of Entity
+     * @param state The state of Entity
      * @param loc The Location of the Entity
      */
-    public Entity(Entities type,Location loc) {
-        this.type = type;
+    public Entity(EntityStates state,Location loc) {
+        this.state = state;
         this.location = loc;
     }
 
-    private Entities type;
+    private EntityStates state;
     private Location location;
 
-    private int liveNeighbor=0;
+    private int liveNeighbor = 0;
 
     public int getLiveNeighbor() {
         return liveNeighbor;
     }
+
     public void setLiveNeighbor(int liveNeighbor) {
         this.liveNeighbor = liveNeighbor;
     }
 
     /**
-     * @return The type of the Entity
+     * @return The state of the Entity
      */
-    public Entities getType() {
-        return type;
+    public EntityStates getState() {
+        return state;
     }
 
     /**
-     * @param type The type of the Entity
+     * @param state The state of the Entity
      */
-    public void setType(Entities type) {
-        this.type = type;
+    public void setState(EntityStates state) {
+        this.state = state;
     }
 
     /**

@@ -4,7 +4,7 @@ public enum Entities {
     HUMAN,ZOMBIE,BLANK;
 
     /**
-     * The function toString overrides  the method in java.lang.Enum
+     * The function getAsString overrides  the method in java.lang.Enum
      * @return The "icon" that will be displayed in Grid.display()
      */
     @Override

@@ -4,13 +4,9 @@ import java.util.Random;
 
 public class Grid {
 
-
     private static int rows;
     private static int columns;
     private static Entity[] cells;
-
-
-
 
     /**
      * @return The grid's amount of rows
@@ -27,6 +23,10 @@ public class Grid {
         return columns;
     }
 
+    public int getGridSize() {
+        return cells.length;
+    }
+
     /**
      * Grid class constructor
      * @param row The amount of rows to initialize
@@ -34,7 +34,6 @@ public class Grid {
      * @param rand The random number for various tasks
      */
     public Grid(int row, int column,Random rand) {
-
         rows = row;
         columns = column;
         cells = new Entity[rows*columns];
@@ -44,16 +43,16 @@ public class Grid {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 System.out.println("Cell " + cellID + " created");
-                cells[cellID] = new Entity(Entities.DEATH,new Location(j+1,i+1));
+                cells[cellID] = new Entity(EntityStates.DEAD,new Location(j+1,i+1));
                 ++cellID;
             }
         }
 
         //Put some alive cells
-        for (int i = 0; i < cells.length; i++) {
+        for(Entity cell : cells) {
             //Set cells alive (20% chance)
-            if(rand.nextInt(101) < 20){
-                cells[i].setType(Entities.ALIVE);
+            if(rand.nextInt(101) < 20) {
+                cell.setState(EntityStates.ALIVE);
             }
         }
 
@@ -64,9 +63,8 @@ public class Grid {
      * @param type The type of the cell
      * @param loc The location of the cell
      */
-    public void set(Entities type,Location loc){
-
-        cells[getCellID(loc)].setType(type);
+    public void set(EntityStates type,Location loc) {
+        cells[getCellID(loc)].setState(type);
     }
 
     /**
@@ -74,7 +72,7 @@ public class Grid {
      * @param loc Location of the cell
      * @return The cell ID
      */
-    public int getCellID(Location loc){
+    public int getCellID(Location loc) {
         return (loc.y -1) * getRows() + (loc.x -1);
     }
 
@@ -83,24 +81,25 @@ public class Grid {
      * @param cellID The cell ID
      * @return The Location of the cell
      */
-    public Location getLocation(int cellID){
+    public Location getLocation(int cellID) {
         return cells[cellID].getLocation();
     }
 
     /**
      * Loop trough the array of cells and display its "icon" depending on its type
      */
-    public void display(){
+    public void display() {
         int cellID = 0;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                System.out.print(cells[cellID].getType());
+                System.out.print(cells[cellID].getState().getTextualIcon());
                 ++cellID;
             }
             System.out.println();
         }
     }
-    public Entity getEntity(int cellID){
+
+    public Entity getEntity(int cellID) {
         return cells[cellID];
     }
 }
