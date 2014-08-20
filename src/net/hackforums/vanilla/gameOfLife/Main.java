@@ -43,7 +43,7 @@ public class Main {
                 System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             grid.display();
             try {
-                Thread.sleep(250);
+                Thread.sleep(speed);
             } catch(InterruptedException e) {
                 continueExecution = false;
             }
