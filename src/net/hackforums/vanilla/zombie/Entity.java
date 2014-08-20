@@ -6,26 +6,26 @@ public class Entity {
      * @param type The type of Entity
      * @param loc The Location of the Entity
      */
-    public Entity(Entities type,Location loc) {
+    public Entity(EntityType type,Location loc) {
         this.type = type;
         this.location = loc;
     }
 
-    private Entities type;
+    private EntityType type;
 
     private Location location;
 
     /**
      * @return The type of the Entity
      */
-    public Entities getType() {
+    public EntityType getType() {
         return type;
     }
 
     /**
      * @param type The type of the Entity
      */
-    public void setType(Entities type) {
+    public void setType(EntityType type) {
         this.type = type;
     }
 

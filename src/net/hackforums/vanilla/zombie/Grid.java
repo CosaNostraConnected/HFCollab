@@ -38,7 +38,7 @@ public class Grid {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 System.out.println("Cell " + cellID + " created");
-                cells[cellID] = new Entity(Entities.BLANK,new Location(j+1,i+1));
+                cells[cellID] = new Entity(EntityType.BLANK,new Location(j+1,i+1));
                 ++cellID;
             }
         }
@@ -50,7 +50,7 @@ public class Grid {
      * @param type The type of the cell
      * @param loc The location of the cell
      */
-    public void set(Entities type,Location loc){
+    public void set(EntityType type,Location loc){
 
         cells[getCellID(loc)].setType(type);
     }
@@ -80,7 +80,7 @@ public class Grid {
         int cellID = 0;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                System.out.print(cells[cellID].getType());
+                System.out.print(cells[cellID].getType().getTextualIcon());
                 ++cellID;
             }
             System.out.println();
