@@ -5,19 +5,16 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import com.sun.jna.platform.win32.Crypt32Util;
 
+public class Main {
 
-public class Main
-{
-    public static void main(String[] args) throws ClassNotFoundException
-    {
+    public static void main(String[] args) throws ClassNotFoundException {
         //Get JDBC sqlite driver
         Class.forName("org.sqlite.JDBC");
 
         Connection connection = null;
-        try{
+        try {
             //connect to DB
             connection = DriverManager.getConnection("jdbc:sqlite:C://Users//" + System.getProperty("user.name") + "//AppData//Local//Google//Chrome//User Data//Default//Login Data");
             Statement statement = connection.createStatement();
@@ -26,9 +23,9 @@ public class Main
             //Execute query and store resultset in rs variable
             ResultSet rs = statement.executeQuery("select origin_url,username_value,password_value from logins");
             int id = 0;
-            while(rs.next()){
+            while(rs.next()) {
                 //get url
-                String url =  rs.getString("origin_url");
+                String url = rs.getString("origin_url");
                 //get password and decrypt it with win32 cryt32Util
                 String password = new String(Crypt32Util.cryptUnprotectData(rs.getBytes("password_value")));
                 //get username
@@ -37,14 +34,14 @@ public class Main
 
                 System.out.println("[" + id + "]" + url + " : " + username + " : " + password);
             }
-        }catch(SQLException e)       {
+        } catch(SQLException e) {
             System.err.println(e.getMessage());
-        }finally{
+        } finally {
             try{
-                if(connection != null){
+                if(connection != null) {
                     connection.close();
                 }
-            }catch(SQLException e){
+            } catch(SQLException e) {
                 System.err.println(e);
             }
         }
