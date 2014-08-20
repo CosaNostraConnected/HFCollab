@@ -1,4 +1,4 @@
-package testingGit;
+package net.hackforums.m1kep;
 
 public class Main {
 
