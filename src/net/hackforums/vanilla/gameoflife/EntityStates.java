@@ -1,4 +1,4 @@
-package net.hackforums.vanilla.gameOfLife;
+package net.hackforums.vanilla.gameoflife;
 
 public enum EntityStates {
 
