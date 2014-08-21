@@ -8,19 +8,17 @@ public class StringReverser {
 
     public static void main(String[] args) {
         if(args.length > 1) {
-            reverse(args[0]);
+            printReverse(args[0]);
         } else {
             System.out.print(WELCOME_MESSAGE);
             Scanner input = new Scanner(System.in);
-            reverse(input.nextLine());
+            printReverse(input.nextLine());
         }
     }
 
-    private static void reverse(String inputArg) {
-        char[] inputCharacters = new char[inputArg.length()];
-        inputArg.getChars(0, inputArg.length(), inputCharacters, 0);
-        for(int i = inputCharacters.length - 1; i >= 0; i--) {
-            System.out.print(inputCharacters[i]);
+    private static void printReverse(String inputArg) {
+        for(int i = inputArg.length() - 1; i >= 0; i--) {
+            System.out.print(inputArg.charAt(i));
         }
     }
 }
