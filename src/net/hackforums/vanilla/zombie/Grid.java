@@ -50,8 +50,7 @@ public class Grid {
      * @param type The type of the cell
      * @param loc The location of the cell
      */
-    public void set(EntityType type,Location loc){
-
+    public void set(EntityType type,Location loc) {
         cells[getCellID(loc)].setType(type);
     }
 
