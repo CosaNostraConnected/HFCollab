@@ -10,6 +10,4 @@ package net.hackforums.thehfgame;
  * a difference context.
  *
  */
-public @interface Documented {
-
-}
+public @interface Documented {}

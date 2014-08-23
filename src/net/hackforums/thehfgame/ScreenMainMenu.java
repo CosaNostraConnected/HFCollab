@@ -1,5 +1,9 @@
 package net.hackforums.thehfgame;
 
+/**
+ * The main menu screen.
+ *
+ */
 public class ScreenMainMenu extends Screen {
 
 	public ScreenMainMenu(Game game) {

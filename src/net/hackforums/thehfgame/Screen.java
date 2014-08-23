@@ -2,6 +2,10 @@ package net.hackforums.thehfgame;
 
 import java.util.ArrayList;
 
+/**
+ * This class is intended to be extended (e.g. ScreenMainMenu)
+ *
+ */
 public abstract class Screen implements IScreen {
 
 	/**

@@ -1,5 +1,10 @@
 package net.hackforums.thehfgame;
 
+/**
+ * Represents a component on the screen.
+ * If not intended, all components should be
+ * inside the borders of the screen.
+ */
 public abstract class ScreenComponent {
 
 	protected Screen screen;

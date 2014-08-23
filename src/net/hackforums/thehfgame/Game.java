@@ -1,8 +1,7 @@
 package net.hackforums.thehfgame;
 
 /**
- * Titled "Game" to make it simplistic.
- * @author Yusuf
+ * The game component class.
  *
  */
 public class Game {

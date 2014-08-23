@@ -2,7 +2,7 @@ package net.hackforums.thehfgame;
 
 /**
  * The main class. This class will generally just launch
- * the game. There is no need to thread the game either.
+ * the game. There is no need to thread the game.
  * @author Yusuf
  *
  */

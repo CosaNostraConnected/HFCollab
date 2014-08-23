@@ -1,5 +1,10 @@
 package net.hackforums.thehfgame;
 
+/**
+ * An interface used to represent the
+ * framework of a screen.
+ *
+ */
 @Documented
 public interface IScreen extends IRenderable {
 
