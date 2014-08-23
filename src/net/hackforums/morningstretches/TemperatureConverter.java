@@ -42,14 +42,14 @@ class TemperatureConverter implements Runnable {
             } else if (input == 2) {
                 fahrenheit(consoleScanner);
             } else if (input == 3) {
-                try {
-                    System.out.println("Have a great day! Goodbye!");
-                    this.wait(100);
-                    System.exit(0);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
+                System.exit(0);
+//                try {
+//                    System.out.println("Have a great day! Goodbye!");
+//                    this.wait(100);
+//                    System.exit(0);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
             }
         }
     }
