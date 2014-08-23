@@ -2,35 +2,55 @@ package net.hackforums.morningstretches;
 
 import java.util.Scanner;
 
-class TemperatureConverter {
-  
-	private static void celcius() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("What is the temperature in celcius?");
-		double input = scanner.nextDouble();
-		System.out.println(input + " celcius is " + (input*9/5+32) + " farenheight" );
-	}
-	
-	private static void farenheight() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("What is the temperature in farenheight?");
-		double input = scanner.nextDouble();
-		System.out.println(input + " celcius is " + (input-32/5*9) + " farenheight" );
-		System.out.println("Would you like to quit?(y/n)");
-	}
-	
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		while(true) {
-				System.out.println("Would you like to do: [1] convert celcius to farenheight, [2] convert farenheight to celcius, [3] quit");
-				int input = scanner.nextInt();
-				if(input == 1) {
-					celcius();
-				} else if(input == 2) {
-					farenheight();
-				} else if(input == 3) {
-					System.exit(0);
-				}
-			}
-	}
+class TemperatureConverter implements Runnable {
+
+    private static void celsius(Scanner userInput) {
+        System.out.print("Please enter the temperature in degrees celsius: ");
+        double input = userInput.nextDouble();
+        System.out.println(input + " celsius is " + (input * 9 / 5 + 32) + "degrees fahrenheit.");
+    }
+
+    private static void fahrenheit(Scanner userInput) {
+        System.out.print("Please enter the temperature in fahrenheit: ");
+        double input = userInput.nextDouble();
+        System.out.println(input + " celsius is " + (input - 32 / 5 * 9) + "degrees fahrenheit.");
+    }
+
+//    public static void main(String[] args) {
+//        Scanner consoleScanner = new Scanner(System.in);
+//        while (true) {
+//            System.out.print("Would you like to do: [1] convert celsius to fahrenheit, [2] convert fahrenheit to celsius, or [3] quit: ");
+//            int input = consoleScanner.nextInt();
+//            if (input == 1) {
+//                celsius(consoleScanner);
+//            } else if (input == 2) {
+//                fahrenheit(consoleScanner);
+//            } else if (input == 3) {
+//                System.exit(0);
+//            }
+//        }
+//}
+
+    @Override
+    public void run() {
+        Scanner consoleScanner = new Scanner(System.in);
+        while (true) {
+            System.out.print("Would you like to do: [1] convert celsius to fahrenheit, [2] convert fahrenheit to celsius, or [3] quit: ");
+            int input = consoleScanner.nextInt();
+            if (input == 1) {
+                celsius(consoleScanner);
+            } else if (input == 2) {
+                fahrenheit(consoleScanner);
+            } else if (input == 3) {
+                try {
+                    System.out.println("Have a great day! Goodbye!");
+                    this.wait(100);
+                    System.exit(0);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
+    }
 }

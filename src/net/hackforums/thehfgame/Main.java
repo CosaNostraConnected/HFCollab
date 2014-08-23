@@ -14,7 +14,7 @@ public class Main implements Runnable{
     @Override
     public void run() {
         
-        init();
+        //init();
         
         while(isRunning) {
             
