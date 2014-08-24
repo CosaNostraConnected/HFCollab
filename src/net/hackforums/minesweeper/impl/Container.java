@@ -1,5 +1,7 @@
 package net.hackforums.minesweeper.impl;
 
+import net.hackforums.minesweeper.Minesweeper;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -14,16 +16,27 @@ import java.util.List;
  */
 public class Container extends JPanel {
 
-    private List<Section> sections;
+    private ArrayList<Section> sections;
+    private Image heart;
 
-    public Container(int width, int height) {
+    public void reset(int width, int height, Minesweeper game) {
+        sections.clear();
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                sections.add(new Section(x, y, game));
+            }
+        }
+    }
+
+    public Container(int width, int height, Minesweeper game) {
 
         sections = new ArrayList<>();
+        heart = new ImageIcon(getClass().getResource("heart-icon.png")).getImage();
 
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                sections.add(new Section(x, y));
+                sections.add(new Section(x, y, game));
             }
         }
 
@@ -33,7 +46,7 @@ public class Container extends JPanel {
                 super.mouseClicked(e);
                 for (Section section : sections) {
                     if (section.contains(e.getPoint())) {
-                        section.open();
+                        section.open(sections, true);
                         repaint();
                     }
                 }
@@ -63,11 +76,19 @@ public class Container extends JPanel {
                     g.drawString("Bomb!", (s.getX()*50) + 5, (s.getY()*50) + 25);
                 } else {
                     g.drawString("+" + s.getPoints(), (s.getX()*50) + 5, (s.getY()*50) + 25);
+                    if (s.containsHeart()) {
+                        g.drawImage(heart, (s.getX() * 50) + 5, (s.getY()*50) + 35, null);
+                    }
                 }
             }
             g.drawRect(s.getX() * 50, s.getY() * 50, 50, 50);
         }
-
+        int x = getWidth() - 30;
+        for (int i = 0; i < GlobalVars.lives; i++) {
+            g.drawImage(heart, x - (i * 20), 20, null);
+        }
+        g.setColor(Color.BLACK);
+        g.drawString("Points: " + GlobalVars.points, x - 100, 50);
     }
 
 }
