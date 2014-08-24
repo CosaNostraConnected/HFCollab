@@ -6,7 +6,7 @@ import java.util.Random;
 /**
  * Created by Zakary on 8/24/2014.
  *
- * Represents a 'section' within the minesweeper game.
+ * Represents a "section" within the minesweeper game.
  * cba to javadoc sorry.
  */
 public class Section {
