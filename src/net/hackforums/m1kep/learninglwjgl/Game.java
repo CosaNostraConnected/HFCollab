@@ -1,4 +1,4 @@
-package net.hackforums.m1kep.gameattempt;
+package net.hackforums.m1kep.learninglwjgl;
 
 
 import org.lwjgl.LWJGLException;
