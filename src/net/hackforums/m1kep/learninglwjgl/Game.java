@@ -28,7 +28,7 @@ public class Game {
 
     public void start(){
         try {
-            Display.setTitle("openGL learning!");
+            Display.setTitle("openGLTutorialPongGame learning!");
             Display.setResizable(true);
             Display.setDisplayMode(new DisplayMode(WIDTH, HEIGHT));
             Display.setVSyncEnabled(VSYNC);
