@@ -86,7 +86,10 @@ public class Main {
     private static void initDisplay() {
 
         try {
-            Display.setDisplayMode(new DisplayMode(800, 600));
+            Display.getHeight();
+            Display.setDisplayMode(new DisplayMode(1000, 500));
+            // Still attempting to implement
+            //Display.setResizable(true);
             Display.create();
             Display.setVSyncEnabled(true);
 

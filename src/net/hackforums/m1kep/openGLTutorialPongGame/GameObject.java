@@ -11,10 +11,8 @@ public abstract class GameObject {
     protected float sizeY;
 
     abstract void update();
-    public void render(){
-
-        Draw.rect(xPos,yPos,sizeX,sizeY);
-
+    public void render() {
+        Draw.rect(xPos, yPos, sizeX, sizeY);
     }
 
     public float getxPos() {
