@@ -26,7 +26,7 @@ public final class TemperatureConverter2 {
      */
     public static void main(String[] args) {
         // Initial prompt.
-        System.out.println("Input a temparature (Example 10C / 62F):");
+        System.out.println("Input a temperature (Example 10C / 62F):");
 
         // Regex matcher.
         final Matcher matcher = TemperatureConverter2.TEMP_PATTERN.matcher(TemperatureConverter2.SYSTEM_IN.nextLine());
@@ -44,7 +44,7 @@ public final class TemperatureConverter2 {
         } else {
             // Show the error message.
             System.out.println("Follow instructions, dipshit.");
-            main(args); // May result in StackOverflow if user is braindead.
+            main(args); // May result in StackOverflow if user is brain dead.
         }
 
         // Close the input.

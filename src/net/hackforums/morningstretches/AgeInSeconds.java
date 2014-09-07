@@ -39,7 +39,7 @@ public final class AgeInSeconds {
         } catch (ParseException e) {
             // Recursively handle idiotic errors.
             System.out.println("Follow instructions, dipshit.");
-            main(args); // May result in StackOverflow if user is braindead.
+            main(args); // May result in StackOverflow if user is brain dead.
         }
 
         // Close the static instance of the scanner.

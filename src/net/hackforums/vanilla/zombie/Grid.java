@@ -64,7 +64,7 @@ public class Grid {
     }
 
     /**
-     * Convert cell ID to Loation
+     * Convert cell ID to Location
      * @param cellID The cell ID
      * @return The Location of the cell
      */

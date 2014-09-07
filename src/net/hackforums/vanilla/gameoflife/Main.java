@@ -24,7 +24,7 @@ public class Main {
         System.out.println("SizeY: (Max: 80)");
         sizeY = scanner.nextInt();
 
-        //Create a Random object using the povided seed
+        //Create a Random object using the provided seed
         Random rand = new Random(seed.hashCode());
         //Create the grid
         Grid grid = new Grid(sizeY,sizeX,rand);
